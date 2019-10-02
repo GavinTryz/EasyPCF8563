@@ -1,0 +1,78 @@
+#######################################
+# Syntax Coloring Map For EasyPCF8563
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+EasyPCF8563	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+getVoltageStatus	KEYWORD2
+getSecond	KEYWORD2
+getMinute	KEYWORD2
+getHour	KEYWORD2
+getDay	KEYWORD2
+getWeekday	KEYWORD2
+getMonth	KEYWORD2
+getYear	KEYWORD2
+getTime	KEYWORD2
+getDate	KEYWORD2
+getDateTime	KEYWORD2
+
+setSecond	KEYWORD2
+setMinute	KEYWORD2
+setHour	KEYWORD2
+setDay	KEYWORD2
+setWeekday	KEYWORD2
+setMonth	KEYWORD2
+setYear	KEYWORD2
+setTime	KEYWORD2
+setDate	KEYWORD2
+setDateTime	KEYWORD2
+autoSync	KEYWORD2
+
+alarmMinute	KEYWORD2
+alarmHour	KEYWORD2
+alarmDay	KEYWORD2
+alarmWeekday	KEYWORD2
+alarmInterrupt	KEYWORD2
+alarmClear	KEYWORD2
+alarmDisable	KEYWORD2
+
+timer	KEYWORD2
+timerMultiplier	KEYWORD2
+timerInterrupt	KEYWORD2
+timerPulse	KEYWORD2
+timerEnable	KEYWORD2
+timerClear	KEYWORD2
+timerDisable	KEYWORD2
+
+weekdayFromDate	KEYWORD2
+shortMonthToValue	KEYWORD2
+valueToMonth	KEYWORD2
+valueToShortMonth	KEYWORD2
+valueToWeekday	KEYWORD2
+valueToShortWeekday	KEYWORD2
+
+#######################################
+# Constants (that are useful) (LITERAL1)
+#######################################
+
+FORMAT_DMY	LITERAL1
+FORMAT_MDY	LITERAL1
+FORMAT_YMD	LITERAL1
+FORMAT_12HR	LITERAL1
+FORMAT_24HR	LITERAL1
+SUNDAY	LITERAL1
+MONDAY	LITERAL1
+TUESDAY	LITERAL1
+WEDNESDAY	LITERAL1
+THURSDAY	LITERAL1
+FRIDAY	LITERAL1
+SATURDAY	LITERAL1
+SUNDAY	LITERAL1
