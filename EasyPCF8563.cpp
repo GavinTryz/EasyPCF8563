@@ -4,7 +4,7 @@
  *  Code by Gavin Tryzbiak
  *  https://github.com/GavinTryz
  *  
- *  Arduino library built to communicate with the PCF8563 Real Time Clock chip via I2C.
+ *  Easy-yet-powerful Arduino library built to communicate with the PCF8563 Real Time Clock chip via I2C.
  *  
  */
 
@@ -231,6 +231,11 @@ void EasyPCF8563::alarmWeekday(uint8_t weekday)
   _writeToAddress(ADR_ALARM_WEEKDAY, 0b01111111 & weekday);
 }
 
+bool EasyPCF8563::alarmStatus(void)
+{
+	return (_readFromAddress(ADR_CONTROL_STATUS_2) & 0b00001000) >> 3;
+}
+
 void EasyPCF8563::alarmInterrupt(bool value)
 {
   if(value)
@@ -250,10 +255,11 @@ void EasyPCF8563::alarmDisable(void)
   _writeToAddress(ADR_ALARM_HOUR, 0b10000000);
   _writeToAddress(ADR_ALARM_DAY, 0b10000000);
   _writeToAddress(ADR_ALARM_WEEKDAY, 0b10000000);
+  alarmClear();
 }
 
 // Timer
-void EasyPCF8563::timer(uint8_t value)
+void EasyPCF8563::timerSet(uint8_t value)
 {
   _writeToAddress(ADR_TIMER, value);
 }
@@ -261,6 +267,16 @@ void EasyPCF8563::timer(uint8_t value)
 void EasyPCF8563::timerMultiplier(uint8_t value)
 {
   _writeToAddress(ADR_TIMER_CONTROL, (_readFromAddress(ADR_TIMER_CONTROL) & 0b10000000) | (value & 0b00000011));
+}
+
+uint8_t EasyPCF8563::timerRemaining(void)
+{
+	return _readFromAddress(ADR_TIMER);
+}
+
+bool EasyPCF8563::timerStatus(void)
+{
+	return (_readFromAddress(ADR_CONTROL_STATUS_2) & 0b00000100) >> 2;
 }
 
 void EasyPCF8563::timerInterrupt(bool value)

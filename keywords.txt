@@ -40,12 +40,15 @@ alarmMinute	KEYWORD2
 alarmHour	KEYWORD2
 alarmDay	KEYWORD2
 alarmWeekday	KEYWORD2
+alarmStatus	KEYWORD2
 alarmInterrupt	KEYWORD2
 alarmClear	KEYWORD2
 alarmDisable	KEYWORD2
 
 timer	KEYWORD2
 timerMultiplier	KEYWORD2
+timerRemaining	KEYWORD2
+timerStatus	KEYWORD2
 timerInterrupt	KEYWORD2
 timerPulse	KEYWORD2
 timerEnable	KEYWORD2

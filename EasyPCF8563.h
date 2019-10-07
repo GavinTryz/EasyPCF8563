@@ -4,7 +4,7 @@
  *  Code by Gavin Tryzbiak
  *  https://github.com/GavinTryz
  *  
- *  Arduino library built to communicate with the PCF8563 Real Time Clock chip via I2C.
+ *  Easy-yet-powerful Arduino library built to communicate with the PCF8563 Real Time Clock chip via I2C.
  *  
  */
 
@@ -77,13 +77,16 @@ class EasyPCF8563
     void alarmHour(uint8_t hour);
     void alarmDay(uint8_t day);
     void alarmWeekday(uint8_t weekday);
+	bool alarmStatus(void);
     void alarmInterrupt(bool value);
     void alarmClear(void);
     void alarmDisable(void);
     
-    void timer(uint8_t value);
-    void timerMultiplier(uint8_t value); // 0 = 1/4096, 1 = 1/64, 2 = 1, 3 = 60 (seconds, 3 may be unstable)
-    void timerInterrupt(bool value);
+    void timerSet(uint8_t value);
+    void timerMultiplier(uint8_t value); // 0 = 1/4096, 1 = 1/64, 2 = 1, 3 = 60 (seconds, 3 only goes off at the 0 second of the current minute)
+    uint8_t timerRemaining(void);
+	bool timerStatus(void);
+	void timerInterrupt(bool value);
     void timerPulse(bool value);
     void timerEnable(void);
     void timerClear(void);
